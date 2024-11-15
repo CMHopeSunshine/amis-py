@@ -27,13 +27,15 @@
     <body>
         <div id="root" class="app-wrapper"></div>
         <script type="text/javascript">
-            let amis = amisRequire('amis/embed');
-            let amisJson = {{ AmisSchemaJson }};
-            let amisScoped = amis.embed('#root', amisJson, {locale: "{{ locale }}"}, {
-                {{ requestAdaptor }}
-                {{ responseAdaptor }}
-                theme: '{{ theme_name }}'
-            });
+            (function () {
+                let amis = amisRequire('amis/embed');
+                let amisJson = {{ AmisSchemaJson }};
+                let amisScoped = amis.embed('#root', amisJson, {locale: "{{ locale }}"}, {
+                    {{ requestAdaptor }}
+                    {{ responseAdaptor }}
+                    theme: '{{ theme_name }}'
+                });
+            })();
         </script>
     </body>
 </html>
